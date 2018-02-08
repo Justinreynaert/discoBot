@@ -6,8 +6,6 @@ if (!process.env.heroku) {
   const config = require('./config/private');
 }
 
-console.log("heroku", process.env.HEROKU);
-
 const apiKey = (process.env.wowapikey || config.wowapikey);
 const Helpers = (function() {
   var capitalizeFirstLetter = function(string) {
