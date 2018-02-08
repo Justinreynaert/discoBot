@@ -2,7 +2,7 @@ const request = require('request');
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-if (process.env.NODE && ~process.env.NODE.indexOf("heroku")) {
+if (process.env.heroku) {
   const config = require('./config/private');
 }
 
