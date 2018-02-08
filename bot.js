@@ -2,11 +2,13 @@ const request = require('request');
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-if (!process.env.HEROKU) {
+/*if (!process.env.HEROKU) {
   const config = require('./config/private');
-}
+}*/
 
-const apiKey = (process.env.wowapikey || config.wowapikey);
+console.log("heroku", process.env.HEROKU);
+
+const apiKey = (process.env.wowapikey);
 const Helpers = (function() {
   var capitalizeFirstLetter = function(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -242,4 +244,4 @@ client.on('message', msg => {
   }
 });
 
-client.login(process.env.discordtoken || config.discordtoken);
+client.login(process.env.discordtoken);
