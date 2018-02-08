@@ -2,7 +2,9 @@ const request = require('request');
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-const config = require('./config/private');
+if (!process.env.HEROKU) {
+  const config = require('./config/private');
+}
 
 const apiKey = (process.env.wowapikey || config.wowapikey);
 const Helpers = (function() {
